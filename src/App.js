@@ -1,35 +1,31 @@
 import {Navbar} from './components/Navbar'
 import {Info} from './components/Info'
 import {Profile} from './components/Profile'
-import {Home} from './components/Home'
+import {Admin} from './components/Admin'
 import {useEffect} from 'react'
+import {Home} from './pages/Home'
+import {Login} from './pages/Login'
+import {User} from './pages/User'
 
 import './App.css';
-import {createBrowserRouter,RouterProvider} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
    useEffect(() => {
     fetch("http://localhost:5001/api/employees")
       .then(res => res.json())
       .then(data => console.log(data));
   }, []);
-
-
-   const router=createBrowserRouter([
-    {
-      path:"/info",
-      element:<><Navbar title="Employee management desk" /><Info/></>
-    },
-    {
-      path:"/",
-      element: <><Navbar title="Employee management desk"/><Home/></>
-    },
-    {
-      path:"/profile",
-      element: <><Navbar title="Employee management desk"/><Profile/></>
-    }
-  ])
   return (
-    <RouterProvider router={router}/>
+     <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/employee" element={<User />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

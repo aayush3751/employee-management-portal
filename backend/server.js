@@ -58,6 +58,28 @@ app.get('/api/employees', (req, res) => {
   });
 });
 
+// Admin Login Endpoint
+app.post('/api/admin/login', (req, res) => {
+  const { username, password } = req.body;
+  
+  // Check admin credentials from environment variables
+  if (username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD) {
+    res.json({ 
+      success: true, 
+      message: 'Admin login successful',
+      admin: {
+        username: process.env.ADMIN_USERNAME,
+        email: process.env.ADMIN_EMAIL
+      }
+    });
+  } else {
+    res.status(401).json({ 
+      success: false, 
+      message: 'Invalid admin credentials' 
+    });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

@@ -1,7 +1,7 @@
 import React from "react";
 import "../Home.css";
 import {useNavigate} from "react-router-dom";
-export const Home = () => {
+export const Admin = () => {
      const navigate = useNavigate();
   return (
     <div className="home-container">
@@ -64,4 +64,4 @@ export const Home = () => {
   );
 };
 
-export default Home;
+export default Admin;
