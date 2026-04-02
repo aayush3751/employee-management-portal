@@ -1,0 +1,145 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page background */
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #1f3c88, #39a2db);
+  color: #333;
+}
+
+/* Header */
+.header {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+
+.header h1 {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+/* Navigation */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #39a2db;
+  border-bottom: 2px solid #39a2db;
+}
+
+/* Welcome Section */
+.welcome-section {
+  text-align: center;
+  padding: 60px 20px 30px;
+  color: #fff;
+}
+
+.welcome-section h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.welcome-section p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Stats Section */
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+.stat-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.25);
+}
+
+.stat-card h3 {
+  margin-bottom: 10px;
+  color: #1f3c88;
+}
+
+.stat-card p {
+  font-size: 28px;
+  font-weight: bold;
+  color: #39a2db;
+}
+
+/* Actions Section */
+.actions-section {
+  text-align: center;
+  padding: 20px 20px 60px;
+}
+
+.actions-section h2 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.action-buttons button {
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  color: #1f3c88;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.action-buttons button:hover {
+  background: #1f3c88;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}

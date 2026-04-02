@@ -1,0 +1,18 @@
+-- Create database
+CREATE DATABASE IF NOT EXISTS ems_db;
+USE ems_db;
+
+-- Create employees table
+CREATE TABLE IF NOT EXISTS employees (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  phone VARCHAR(20),
+  department VARCHAR(50),
+  position VARCHAR(50),
+  salary DECIMAL(10,2),
+  hire_date DATE,
+  address TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
